@@ -17,6 +17,10 @@ import {
   RefreshCw
 } from "lucide-react";
 import { DiceFramework } from "./DiceFramework";
+import { AIAgent } from "./AIAgent";
+import { NetworkMonitor } from "./NetworkMonitor";
+import { TrainingData } from "./TrainingData";
+import { BackupRecovery } from "./BackupRecovery";
 
 interface LogEntry {
   id: string;
@@ -145,11 +149,14 @@ export const Dashboard = () => {
 
       {/* Main Content Tabs */}
       <Tabs defaultValue="overview" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-7">
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="logs">Log Analysis</TabsTrigger>
-          <TabsTrigger value="targets">Target Management</TabsTrigger>
-          <TabsTrigger value="framework">DICE Framework</TabsTrigger>
+          <TabsTrigger value="ai-agent">AI Agent</TabsTrigger>
+          <TabsTrigger value="network">Network</TabsTrigger>
+          <TabsTrigger value="training">Training</TabsTrigger>
+          <TabsTrigger value="backup">Backup</TabsTrigger>
+          <TabsTrigger value="logs">Logs</TabsTrigger>
+          <TabsTrigger value="framework">DICE</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -237,24 +244,29 @@ export const Dashboard = () => {
           </div>
         </TabsContent>
 
+        <TabsContent value="ai-agent">
+          <AIAgent />
+        </TabsContent>
+
+        <TabsContent value="network">
+          <NetworkMonitor />
+        </TabsContent>
+
+        <TabsContent value="training">
+          <TrainingData />
+        </TabsContent>
+
+        <TabsContent value="backup">
+          <BackupRecovery />
+        </TabsContent>
+
         <TabsContent value="logs">
           <Card>
             <CardHeader>
-              <CardTitle>Log Analysis & Management</CardTitle>
+              <CardTitle>Advanced Log Analysis & Management</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Advanced log analysis tools coming soon...</p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="targets">
-          <Card>
-            <CardHeader>
-              <CardTitle>Target Management</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Target configuration and monitoring coming soon...</p>
+              <p className="text-muted-foreground">Advanced log analysis tools and SIEM integration coming soon...</p>
             </CardContent>
           </Card>
         </TabsContent>
