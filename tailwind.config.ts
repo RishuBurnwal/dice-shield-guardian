@@ -52,16 +52,36 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				dice: {
+					defend: 'hsl(var(--dice-defend))',
+					'defend-foreground': 'hsl(var(--dice-defend-foreground))',
+					investigate: 'hsl(var(--dice-investigate))',
+					'investigate-foreground': 'hsl(var(--dice-investigate-foreground))',
+					contain: 'hsl(var(--dice-contain))',
+					'contain-foreground': 'hsl(var(--dice-contain-foreground))',
+					evolve: 'hsl(var(--dice-evolve))',
+					'evolve-foreground': 'hsl(var(--dice-evolve-foreground))'
+				},
+				status: {
+					safe: 'hsl(var(--status-safe))',
+					warning: 'hsl(var(--status-warning))',
+					danger: 'hsl(var(--status-danger))',
+					info: 'hsl(var(--status-info))'
 				}
+			},
+			backgroundImage: {
+				'gradient-dice': 'var(--gradient-dice)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)'
+			},
+			boxShadow: {
+				'dice': 'var(--shadow-dice)',
+				'glow': 'var(--shadow-glow)',
+				'elevated': 'var(--shadow-elevated)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bounce': 'var(--transition-bounce)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +104,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-dice': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05)'
+					}
+				},
+				'rotate-dice': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px hsl(var(--dice-defend) / 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px hsl(var(--dice-defend) / 0.6)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-dice': 'pulse-dice 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'rotate-dice': 'rotate-dice 8s linear infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
 			}
 		}
 	},
